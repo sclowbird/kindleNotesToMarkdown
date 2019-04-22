@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+      
+    "preinstall":"cd $(pwd)",
+    "start": "node ./controllers/transform-html",
     "kindleNotes": "node ./controllers/transform-html"
   },
   "dependencies": {
