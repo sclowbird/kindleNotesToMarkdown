@@ -6,14 +6,15 @@ const winston = require('winston');
 const htmlToText = require('html-to-text');
 const { htmlPattern, removeWhiteSpacePattern } = require('../utils/patterns');
 const FILEFORMAT = '.md'
-
+const args = process.argv;
+const IMPORTFILEPATH = '/Users/gregor/Desktop/'+args[2]+'.html';
 
 const logger = winston.createLogger(appSettings.winston.logConfig);
 
 (function loadHtmlContent() {
     logger.info('Loading HTML content...: ' + appSettings.test_html);
     let bookTitle = '';
-    loadFile(appSettings.test_html).then((fileContent) => {
+    loadFile(IMPORTFILEPATH).then((fileContent) => {
         //console.log(fileContent);
         return fileContent;
     }).then((htmlData) => {
