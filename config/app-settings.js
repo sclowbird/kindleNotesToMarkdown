@@ -4,6 +4,10 @@ const winston = require('winston');
 
 
 const appSettings = {
+    importFilePath: '/Users/gregor/documents/',
+    writeFileLocation: '/Users/gregor/Library/Mobile Documents/com~apple~CloudDocs/KindleExports/',
+    importFileFormat: '.html',
+    exportFileFormat: '.md',
     winston: {
         logConfig: {
             transports: [
