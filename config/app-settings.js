@@ -4,12 +4,6 @@ const winston = require('winston');
 
 
 const appSettings = {
-    db_file_name:'./data/kindlesNotes.db',
-    create_sql: {
-        books: './scripts/books.sql',
-        cites: './scripts/cites.sql'
-    },
-    test_html: './data/test.html',
     winston: {
         logConfig: {
             transports: [
