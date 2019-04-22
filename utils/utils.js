@@ -3,7 +3,7 @@
 const fs = require('fs');
 const winston = require ('winston');
 const appSettings = require('../config/app-settings')
-const FILEPATH = '/Users/gregor/Library/Mobile Documents/com~apple~CloudDocs/KindleExports/'
+const FILEPATH = appSettings.writeFileLocation;
 
 const logger = winston.createLogger(appSettings.winston.logConfig);
 
