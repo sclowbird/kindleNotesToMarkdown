@@ -5,24 +5,22 @@ const { loadFile, writeToFile, FILEPATH } = require('../utils/utils');
 const winston = require('winston');
 const htmlToText = require('html-to-text');
 const { htmlPattern, removeWhiteSpacePattern } = require('../utils/patterns');
-const FILEFORMAT = '.md'
 const args = process.argv;
-const IMPORTFILEPATH = '/Users/gregor/Desktop/'+args[2]+'.html';
 
 const logger = winston.createLogger(appSettings.winston.logConfig);
 
 (function loadHtmlContent() {
     logger.info('Loading HTML content...: ' + appSettings.test_html);
     let bookTitle = '';
-    loadFile(IMPORTFILEPATH).then((fileContent) => {
-        //console.log(fileContent);
+    loadFile(appSettings.importFilePath+args[2]+appSettings.importFileFormat).then((fileContent) => {
+        //console.log(appSettings.importFilePath+args[2]+appSettings.importFileFormat);
         return fileContent;
     }).then((htmlData) => {
         logger.info('Extracting text from html elements...', 'textFromHtmlElements()')
         return textFromHtmlElements(htmlData);
     }).then((noteText) => {
         logger.info('Add markdown formats to texts...', 'addMarkdownToText()')
-        bookTitle += (noteText.foundBookTitle[0] + FILEFORMAT);
+        bookTitle += (noteText.foundBookTitle[0] + appSettings.exportFileFormat);
         return addMarkdownToText(noteText);
     }).then((markdownText) => {
         logger.info('Bring text in the right order...', 'bringTextElementsInOrder()')
