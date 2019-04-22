@@ -1,19 +1,18 @@
 'use strict';
 
-const appSettings = require('../config/app-settings');
-const { loadFile, writeToFile, FILEPATH } = require('../utils/utils');
 const winston = require('winston');
 const htmlToText = require('html-to-text');
-const { htmlPattern, removeWhiteSpacePattern } = require('../utils/patterns');
-const args = process.argv;
 
+const appSettings = require('../config/app-settings');
+const { loadFile, writeToFile, FILEPATH } = require('../utils/utils');
+const { htmlPattern } = require('../utils/patterns');
+
+const args = process.argv;
 const logger = winston.createLogger(appSettings.winston.logConfig);
 
 (function loadHtmlContent() {
-    logger.info('Loading HTML content...: ' + appSettings.test_html);
     let bookTitle = '';
     loadFile(appSettings.importFilePath+args[2]+appSettings.importFileFormat).then((fileContent) => {
-        //console.log(appSettings.importFilePath+args[2]+appSettings.importFileFormat);
         return fileContent;
     }).then((htmlData) => {
         logger.info('Extracting text from html elements...', 'textFromHtmlElements()')
@@ -32,7 +31,6 @@ const logger = winston.createLogger(appSettings.winston.logConfig);
     }).catch((err) => {
         logger.error(`Error: ${err.message}`, `loadHtmlContent()`);
     });
-
 })();
 
 
@@ -78,7 +76,6 @@ function sanitizeWhiteSpaceBeforePunctuations(convertedText) {
         convertedText[i] = convertedText[i].replace(/(\b \!)/g, "!");  
         convertedText[i] = convertedText[i].replace(/(\b \-)/g, "-");    
         convertedText[i] = convertedText[i].replace(/(\- \b)/g, "-"); 
-        //convertedText[i] = convertedText[i].replace(/(POSITION\s\d+)/g, ""); 
     }
     return convertedText;
 };

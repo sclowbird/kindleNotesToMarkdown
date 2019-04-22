@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const winston = require ('winston');
+
 const appSettings = require('../config/app-settings')
 const FILEPATH = appSettings.writeFileLocation;
 

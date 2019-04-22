@@ -2,7 +2,6 @@
 
 const winston = require('winston');
 
-
 const appSettings = {
     importFilePath: '/Users/gregor/documents/',
     writeFileLocation: '/Users/gregor/Library/Mobile Documents/com~apple~CloudDocs/KindleExports/',

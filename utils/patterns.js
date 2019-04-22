@@ -8,11 +8,6 @@ const htmlPattern = {
     noteTextPattern: /<div class='noteText'>([\s\S]*?)<\/h3>/g
 };
 
-// ` .` | ` ,` | ` :` | `“ ` | ` ”` | `( ` | ` )` | ` ?` | ` !`
-const removeWhiteSpacePattern = {
-    removeWhiteSpaces: /(\b \.)|(\b \,)|(\b \:)|(\“ \b)|(\b \”)|(\( \b)|(\b \))|(\b \?)|(\b \!)/g
-};
-
 module.exports.htmlPattern = htmlPattern;
-module.exports.removeWhiteSpacePattern = removeWhiteSpacePattern;
+
 
