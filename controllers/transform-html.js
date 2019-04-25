@@ -2,10 +2,11 @@
 
 const winston = require('winston');
 const htmlToText = require('html-to-text');
+const { htmlPattern, puncutationPattern } = require('../utils/patterns');
+const args = process.argv;
 
 const appSettings = require('../config/app-settings');
 const { loadFile, writeToFile, FILEPATH } = require('../utils/utils');
-const { htmlPattern } = require('../utils/patterns');
 
 const args = process.argv;
 const logger = winston.createLogger(appSettings.winston.logConfig);
@@ -63,19 +64,11 @@ function sanitizeConvertedHtmlText(convertedText) {
 }
 
 function sanitizeWhiteSpaceBeforePunctuations(convertedText) {
+    let replacePunctuations = puncutationPattern();
     for(let i = 0; i < convertedText.length; i ++) {
-        convertedText[i] = convertedText[i].replace(/(\b \.)/g, ".");
-        convertedText[i] = convertedText[i].replace(/(\b \,)/g, ",");
-        convertedText[i] = convertedText[i].replace(/(\b \:)/g, ":");
-        convertedText[i] = convertedText[i].replace(/(\b \;)/g, ";");
-        convertedText[i] = convertedText[i].replace(/(\“ \b)/g, "“");
-        convertedText[i] = convertedText[i].replace(/( \”)/g, "”");
-        convertedText[i] = convertedText[i].replace(/(\( \b)/g, "(");
-        convertedText[i] = convertedText[i].replace(/(\b \))/g, ")");
-        convertedText[i] = convertedText[i].replace(/(\b \?)/g, "?");
-        convertedText[i] = convertedText[i].replace(/(\b \!)/g, "!");  
-        convertedText[i] = convertedText[i].replace(/(\b \-)/g, "-");    
-        convertedText[i] = convertedText[i].replace(/(\- \b)/g, "-"); 
+        for(let [punctuationPattern, punctuationString] of replacePunctuations) {
+            convertedText[i] = convertedText[i].replace(punctuationPattern, punctuationString);
+        };
     }
     return convertedText;
 };

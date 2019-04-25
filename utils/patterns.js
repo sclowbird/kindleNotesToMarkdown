@@ -8,6 +8,26 @@ const htmlPattern = {
     noteTextPattern: /<div class='noteText'>([\s\S]*?)<\/h3>/g
 };
 
-module.exports.htmlPattern = htmlPattern;
+// ` .` | ` ,` | ` :` | `“ ` | ` ”` | `( ` | ` )` | ` ?` | ` !`
+function puncutationPattern() {
+    let map = new Map();
+    map.set(/(\b \.)/g, ".");
+    map.set(/(\b \,)/g, ",");
+    map.set(/(\b \:)/g, ":");
+    map.set(/(\b \;)/g, ";");
+    map.set(/(\“ \b)/g, "“");
+    map.set(/( \”)/g, "”");
+    map.set(/(\( \b)/g, "(");
+    map.set(/(\b \))/g, ")");
+    map.set(/(\b \?)/g, "?");
+    map.set(/(\b \!)/g, "!");
+    map.set(/(\b \-)/g, "-");
+    map.set(/(\- \b)/g, "-");
+    return map;
+};
 
+
+
+module.exports.htmlPattern = htmlPattern;
+module.exports.puncutationPattern = puncutationPattern;
 
