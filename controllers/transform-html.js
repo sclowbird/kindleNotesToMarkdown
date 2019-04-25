@@ -8,7 +8,6 @@ const args = process.argv;
 const appSettings = require('../config/app-settings');
 const { loadFile, writeToFile, FILEPATH } = require('../utils/utils');
 
-const args = process.argv;
 const logger = winston.createLogger(appSettings.winston.logConfig);
 
 (function loadHtmlContent() {
