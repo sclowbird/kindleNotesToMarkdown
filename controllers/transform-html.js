@@ -64,7 +64,7 @@ function sanitizeConvertedHtmlText(convertedText) {
 
 function sanitizeWhiteSpaceBeforePunctuations(convertedText) {
     for(let i = 0; i < convertedText.length; i ++) {
-        convertedText[i] = convertedText[i].replace(/(\b \.)/g, ",");
+        convertedText[i] = convertedText[i].replace(/(\b \.)/g, ".");
         convertedText[i] = convertedText[i].replace(/(\b \,)/g, ",");
         convertedText[i] = convertedText[i].replace(/(\b \:)/g, ":");
         convertedText[i] = convertedText[i].replace(/(\b \;)/g, ";");
