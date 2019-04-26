@@ -43,7 +43,7 @@ __Example of converted file (.md-format) opened in VS Code (Extension: Markdown 
   - Click "Save as.."
   - Save it to the `importFilePath` path configured in `app-settings.js`.
 - cd to `.\kindleNotesToMarkdown\`
-  - __(Don't include the file ending  .html)__
+  - __(Don't include the file ending  `.html`)__
   - run `npm start <NameOfHtmlFile>` 
     - e.g. `npm start DerWüstenplanetRoman`  
 - I made a simple alias in my `.bash_profile` so i can run the script from everywhere. 
