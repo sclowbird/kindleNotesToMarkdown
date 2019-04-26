@@ -18,7 +18,7 @@ __Example of converted file (.md-format) opened in VS Code (Extension: Markdown 
 
 ## Benefits
 
-- You can simply read your notes in a beautiful formatted text on your phone. Personally I synchronize all my .md files to a cloud service from which I have easily access from all my devices. (For reading the files in Markdown format I can recommend apps like "Bear Notes" or "Pretext" (iOS)).
+- You can simply read your notes in a beautiful formatted text on all your devices. Personally I synchronize all my .md files to a cloud service from which I have easily access from all my devices. (For reading the files in Markdown format I can recommend apps like "Bear Notes" or "Pretext" (iOS)).
 - You can easily edit your quotes or add additional notes to your quotes.
 - Easy conversion: Export your html file from the Kindle App and convert it with a simple command and save it automatically to your favorite file destination.
 
