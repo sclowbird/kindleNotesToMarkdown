@@ -29,6 +29,7 @@ __Example of converted file (.md-format) opened in VS Code (Extension: Markdown 
   __The IMPORT File is not allowed to have spaces in the name. (In this version of the script)!__
 
 - `git clone https://github.com/sclowbird/kindleNotesToMarkdown.git`
+  - You can also download the repository as a `.zip`-file.
 - cd to `.\kindleNotesToMarkdown\`
   - run `npm install`
 - Open `kindleNotesToMarkdown/config/app-settings.js`
