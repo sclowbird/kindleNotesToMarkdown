@@ -6,12 +6,13 @@ This is a simple script which converts the standard HTML export from the kindle 
 
 __Example of the kindle export (.html) opened in Chrome:__
 
-(Quotes from "Der Wüstenplanet - Frank Herbert")
+>(Quotes from "Der Wüstenplanet - Frank Herbert")
 
 ![Der Wüstenplanet - Frank Herbert](https://user-images.githubusercontent.com/12247845/56811269-a78cf180-6838-11e9-90df-76a02e8e5d3b.png)
 
 
 __Example of converted file (.md-format) opened in VS Code (Extension: Markdown All in One):__
+>(Quotes from "Der Wüstenplanet - Frank Herbert")
 
 ![Der Wüstenplanet - Frank Herbert](https://user-images.githubusercontent.com/12247845/56811416-efac1400-6838-11e9-9fc2-3ac42c5c7d44.png)
 
@@ -28,13 +29,15 @@ __Example of converted file (.md-format) opened in VS Code (Extension: Markdown 
   __The IMPORT File is not allowed to have spaces in the name. (In this version of the script)!__
 
 - `git clone https://github.com/sclowbird/kindleNotesToMarkdown.git`
+- cd to `.\kindleNotesToMarkdown\`
+  - run `npm install`
 - Open kindleNotesToMarkdown/config/app-settings.js
   - Change `importFilePath` according to your needs
     - `importFilePath` is the path from where the kindle html document is imported. __If you run the script, the file you want to converse has to be in this folder.__ I choose my documents folder because it is the regular export path from the kindle app (macOS).
   - Change `writeFileLocation`
     - This is the location where the result of the conversion is saved to. I choose, as already said, my cloud service path.
 - Export your kindle notes:
-  - Open a book
+  - Open a book in your kindle notes app/program.
   - In the upper right corner click "Show notebook".
   - Click "Export"
   - Click "Save as.."
