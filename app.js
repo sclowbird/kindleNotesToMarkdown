@@ -4,7 +4,7 @@ const winston = require('winston');
 const htmlToText = require('html-to-text');
 
 const appSettings = require('./config/app-settings');
-const { htmlPattern, puncutationPattern } = require('./utils/patterns');
+const { htmlPattern, puncutationPattern, markdownPattern } = require('./utils/patterns');
 const { loadFile, writeToFile, FILEPATH } = require('./utils/utils');
 
 const args = process.argv;
@@ -72,22 +72,21 @@ function sanitizeWhiteSpaceBeforePunctuations(convertedText) {
     return convertedText;
 };
 
-//TODO: refactor the markdown ending and place it in patterns.js
 function addMarkdownToText(noteTextObject) {
     let markdownTexts = {
-        bookTitleMarkdown: appendMarkdownString(noteTextObject.foundBookTitle, '# ', '\n\n'),
-        authorMarkdown: appendMarkdownString(noteTextObject.foundAuthor, "### ", '\n\n'),
-        sectionHeadingMarkdown: appendMarkdownString(noteTextObject.foundSectionHeading, "- ", '\n'),
-        noteHeadingMarkdown: appendMarkdownString(noteTextObject.foundNoteHeadings, "##### ", '\n\n'),
-        noteTextMarkdown: appendMarkdownString(noteTextObject.foundNoteText, ">", '\n\n')
+        bookTitleMarkdown: appendMarkdownString(noteTextObject.foundBookTitle, markdownPattern.oneHashHeading),
+        authorMarkdown: appendMarkdownString(noteTextObject.foundAuthor, markdownPattern.threeHashHeading),
+        sectionHeadingMarkdown: appendMarkdownString(noteTextObject.foundSectionHeading, markdownPattern.bulletList),
+        noteHeadingMarkdown: appendMarkdownString(noteTextObject.foundNoteHeadings, markdownPattern.fiveHashHeading),
+        noteTextMarkdown: appendMarkdownString(noteTextObject.foundNoteText, markdownPattern.quote)
     }
     return markdownTexts;
 };
 
 
-function appendMarkdownString(text, markdownBeginning, markdownEnding) {
+function appendMarkdownString(text, markdownBeginning) {
     for(let i = 0; i < text.length; i++) {
-        text[i] = markdownBeginning + text[i] + markdownEnding;
+        text[i] = markdownBeginning + text[i] + markdownPattern.doubleLineBreak;
     }
     return text;
 };

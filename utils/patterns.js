@@ -8,6 +8,18 @@ const htmlPattern = {
     noteTextPattern: /<div class='noteText'>([\s\S]*?)<\/h3>/g
 };
 
+
+const markdownPattern = {
+    oneHashHeading: '# ',
+    threeHashHeading: "### ",
+    fiveHashHeading: "##### ",
+    quote: ">",
+    bulletList: "- ",
+    doubleLineBreak: '\n\n',
+    singleLineBreak: '\n'
+}
+
+
 function puncutationPattern() {
     let map = new Map();
     map.set(/(\b \.)/g, ".");
@@ -29,4 +41,5 @@ function puncutationPattern() {
 
 module.exports.htmlPattern = htmlPattern;
 module.exports.puncutationPattern = puncutationPattern;
+module.exports.markdownPattern = markdownPattern;
 
