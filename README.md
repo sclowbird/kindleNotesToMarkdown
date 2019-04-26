@@ -4,14 +4,14 @@
 
 This is a simple script which converts the standard HTML export from the kindle app in to the markdown file format. The reason I wrote this script is because the kindle HTML format contains a lot of punctuation errors. Additionally, because of the formatting it is not a pleasant experience to read the kindle notes in this exported HTML format.
 
-__Example of the kindle export:__
+__Example of the kindle export (.html) opened in Chrome:__
 
 (Quotes from "Der Wüstenplanet - Frank Herbert")
 
 ![Der Wüstenplanet - Frank Herbert](https://user-images.githubusercontent.com/12247845/56811269-a78cf180-6838-11e9-90df-76a02e8e5d3b.png)
 
 
-__Example of converted file (.md-format):__
+__Example of converted file (.md-format) opened in VS Code (Extension: Markdown All in One):__
 
 ![Der Wüstenplanet - Frank Herbert](https://user-images.githubusercontent.com/12247845/56811416-efac1400-6838-11e9-9fc2-3ac42c5c7d44.png)
 
