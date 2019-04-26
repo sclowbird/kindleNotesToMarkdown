@@ -33,10 +33,19 @@ __Example of converted file (.md-format) opened in VS Code (Extension: Markdown 
     - `importFilePath` is the path from where the kindle html document is imported. __If you run the script, the file you want to converse has to be in this folder.__ I choose my documents folder because it is the regular export path from the kindle app (macOS).
   - Change `writeFileLocation`
     - This is the location where the result of the conversion is saved to. I choose, as already said, my cloud service path.
+- Export your kindle notes:
+  - Open a book
+  - In the upper right corner click "Show notebook".
+  - Click "Export"
+  - Click "Save as.."
+  - Save it to the `importFilePath` path configured in `app-settings.js`.
 - cd to `.\kindleNotesToMarkdown\`
   - __(Don't include the file ending  .html)__
   - run `npm start <NameOfHtmlFile>` 
     - e.g. `npm start DerWüstenplanetRoman`  
+- I made a simple alias in my `.bash_profile` so i can run the script from everywhere. 
+  - BASH RC alias example:
+    - `alias kindlenote='npm start --prefix /Users/gregor/Projects/kindleNotesToMarkdown/ '`
 
 Example: 
 
