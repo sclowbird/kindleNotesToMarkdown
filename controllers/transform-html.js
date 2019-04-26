@@ -2,12 +2,12 @@
 
 const winston = require('winston');
 const htmlToText = require('html-to-text');
-const { htmlPattern, puncutationPattern } = require('../utils/patterns');
-const args = process.argv;
 
 const appSettings = require('../config/app-settings');
+const { htmlPattern, puncutationPattern } = require('../utils/patterns');
 const { loadFile, writeToFile, FILEPATH } = require('../utils/utils');
 
+const args = process.argv;
 const logger = winston.createLogger(appSettings.winston.logConfig);
 
 (function loadHtmlContent() {
@@ -72,6 +72,7 @@ function sanitizeWhiteSpaceBeforePunctuations(convertedText) {
     return convertedText;
 };
 
+//TODO: refactor the markdown ending and place it in patterns.js
 function addMarkdownToText(noteTextObject) {
     let markdownTexts = {
         bookTitleMarkdown: appendMarkdownString(noteTextObject.foundBookTitle, '# ', '\n\n'),

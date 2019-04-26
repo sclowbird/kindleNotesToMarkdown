@@ -8,7 +8,6 @@ const htmlPattern = {
     noteTextPattern: /<div class='noteText'>([\s\S]*?)<\/h3>/g
 };
 
-// ` .` | ` ,` | ` :` | `“ ` | ` ”` | `( ` | ` )` | ` ?` | ` !`
 function puncutationPattern() {
     let map = new Map();
     map.set(/(\b \.)/g, ".");
