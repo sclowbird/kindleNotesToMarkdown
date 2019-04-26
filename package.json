@@ -5,8 +5,8 @@
   "scripts": {
       
     "preinstall":"cd $(pwd)",
-    "start": "node ./controllers/transform-html",
-    "kindleNotes": "node ./controllers/transform-html"
+    "start": "node ./app",
+    "kindleNotes": "node ./app"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
