@@ -32,7 +32,10 @@ __Example of converted file (.md-format) opened in VS Code (Extension: Markdown 
 - cd to `.\kindleNotesToMarkdown\`
   - run `npm install`
 - Open `kindleNotesToMarkdown/config/app-settings.js`
+  - __Important note for windows users: Be sure to write the paths in this way (slashes instead of backslashes)__
+    - e.g. `C:/Users/Gregor/Documents/` instead of `C:\Users\Gregor\Documents\` otherwise it will not work.
   - Change `importFilePath` according to your needs
+
     - `importFilePath` is the path from where the kindle html document is imported. __If you run the script, the file you want to converse has to be in this folder.__ I choose my documents folder because it is the regular export path from the kindle app (macOS).
   - Change `writeFileLocation`
     - This is the location where the result of the conversion is saved to. I choose, as already said, my cloud service path.
